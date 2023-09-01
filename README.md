@@ -2,6 +2,8 @@
 
 ## how to connect two container
 
+get stylish host and password, then you can connect to the database
+
 ```
 docker-compose up
 

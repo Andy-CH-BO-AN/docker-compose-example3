@@ -1,15 +1,15 @@
 services:
   pythonapp:
-    build: ./python/
+    build: ./
     command: sh -c "sleep 10s ; pytest ./test_connect_mysql.py"
     depends_on:
       - mysql
 
   mysql:
-    build: ./mysql/
+    image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'stylish_backend'
+      MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '3306:3306'
